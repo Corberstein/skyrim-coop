@@ -21,7 +21,9 @@ has run here. Successful CI alone will not establish gameplay compatibility.
 
 In [the project repository](https://github.com/Corberstein/skyrim-coop), run the
 `Anniversary NPC handoff comparison` workflow against the candidate branch.
-The workflow is also registered on the default branch. Check the Actions run
+It also runs on code/workflow pushes to `feature-anniversary-coop-npc-handoff`;
+Markdown-only updates do not start another build. The workflow is registered
+on the default branch. Check the Actions run
 for current build status; this document is not proof of a completed build.
 
 The workflow calls the existing Windows build twice: once for the pinned

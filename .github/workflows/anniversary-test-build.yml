@@ -2,6 +2,11 @@ name: Anniversary NPC handoff comparison
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - feature-anniversary-coop-npc-handoff
+    paths-ignore:
+      - '**.md'
 
 permissions:
   contents: read
