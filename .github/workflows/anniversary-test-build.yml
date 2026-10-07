@@ -1,0 +1,28 @@
+name: Anniversary NPC handoff comparison
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: anniversary-npc-handoff-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  compare:
+    name: Build ${{ matrix.variant }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: baseline
+            source-ref: 115b5019609b96eb9d63bbd03962043c30437dc8
+          - variant: candidate
+            source-ref: ${{ github.sha }}
+    uses: ./.github/workflows/windows.yml
+    with:
+      source-ref: ${{ matrix.source-ref }}
+      build-mode: releasedbg
+      upload-build-for-next-job: true

@@ -7,6 +7,11 @@ on:
       - master
   workflow_call:
     inputs:
+      source-ref:
+        description: Source revision to build; empty uses the triggering revision.
+        required: false
+        type: string
+        default: ''
       build-mode:
         required: false
         type: string
@@ -35,6 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
+          ref: ${{ inputs.source-ref }}
           # We need full history in order to create a version string (BuildInfo.h)
           fetch-depth: 0
 
@@ -83,6 +89,9 @@ jobs:
         run: |
           xmake install -o distrib
           cp -rf distrib/bin/* "$STR_BUILD_DIR"
+
+      - name: Record compiled source revision
+        run: git rev-parse HEAD > "${STR_BUILD_DIR}/BUILD_SOURCE.txt"
 
       - name: Generate default server config
         run: |
