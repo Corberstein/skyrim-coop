@@ -1,3 +1,26 @@
+# Skyrim Anniversary co-op experiment
+
+This fork develops and tests changes to **actual Skyrim online co-op**, using
+[Skyrim Together Reborn / TiltedEvolution](https://github.com/tiltedphoques/TiltedEvolution)
+as the starting codebase. The target is Steam Anniversary Edition, executable
+`1.7.104.0`, with bundled Anniversary content in scope.
+
+**Status: experimental. No in-game fixes or Anniversary content compatibility
+have been independently verified by this project.**
+
+The first comparison applies Sergio Rayo's
+[NPC ownership-handoff candidate](https://github.com/tiltedphoques/TiltedEvolution/pull/898):
+enemies should keep drawing weapons and attacking when the player controlling
+them leaves the cell. The baseline and candidate are built on the same Windows
+toolchain. See [build runs](https://github.com/Corberstein/skyrim-coop/actions/workflows/anniversary-test-build.yml)
+and the [two-player test procedure](ANNIVERSARY_TESTING.md).
+
+This first patch does not establish broader quest, inventory, follower,
+reconnection, or Creation Club reliability. Those remain project acceptance
+areas. Skyrim itself and its paid content are not distributed here.
+
+The original project's documentation and license follow.
+
 # Tilted Online
 ![Build status](https://github.com/tiltedphoques/TiltedEvolution/workflows/Build%20windows/badge.svg?branch=master) [![Build linux](https://github.com/tiltedphoques/TiltedEvolution/actions/workflows/linux.yml/badge.svg)](https://github.com/tiltedphoques/TiltedEvolution/actions/workflows/linux.yml)  [![Discord](https://img.shields.io/discord/247835175860305931.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/skyrimtogether)
 
