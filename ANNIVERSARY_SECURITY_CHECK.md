@@ -86,7 +86,11 @@ This resolves the uploaded download's identity and integrity. It does not hash
 the already extracted quarantined instance or explain the launch-time behavior.
 The behavior alert still needs local diagnostic evidence or a Microsoft analysis
 determination. A [submission draft](DEFENDER_REVIEW_DRAFT.md) and the verified
-launcher are prepared; nothing has been submitted and no determination exists.
+launcher are prepared. The user authorized sending that executable and report
+to Microsoft on 8 October 2026. Browser interaction stalled before the file
+upload and was interrupted. Nothing has been submitted, no receipt or case ID
+was obtained, and no determination exists. The same submission remains
+authorized to resume when browser interaction is available.
 
 Microsoft documents the difference between
 [behavior monitoring](https://learn.microsoft.com/en-us/defender-endpoint/demonstration-behavior-monitoring)

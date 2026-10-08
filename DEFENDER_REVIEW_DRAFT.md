@@ -1,8 +1,15 @@
 # Prepared Microsoft Defender review request
 
-Status: prepared, **not submitted**. External submission requires the user's
-authorization. This draft requests investigation of a suspected false positive;
-it does not assert a security determination.
+Status: authorized on 8 October 2026, **not submitted**. The user approved
+sending this exact executable and report to Microsoft. The submission page
+opened, but browser interaction stalled before file selection/upload; the
+interaction was interrupted. No file was uploaded, no submission receipt or
+case ID was obtained, and no Microsoft determination exists. Resume the
+authorized submission when browser interaction is available; renewed approval
+for this same file, report, and destination is not needed.
+
+This draft requests investigation of a suspected false positive; it does not
+assert a security determination.
 
 Destination: [Microsoft Security Intelligence file submission](https://www.microsoft.com/en-us/wdsi/filesubmission).
 
