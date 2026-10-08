@@ -73,11 +73,20 @@ executable memory protections, and replaces executable headers. That is a
 possible explanation for a behavior alert, **not a confirmed cause or a complete
 security audit**. A source review alone cannot establish what ran on the player PC.
 
-Next identify the local copy using `SkyrimTogetherReborn/BUILD_SOURCE.txt` and
-the original downloaded ZIP's SHA-256, without restoring the quarantined EXE.
-The local package hash must be compared with the appropriate package hash above.
-The behavior alert then needs local diagnostic evidence or a Microsoft analysis
-determination; there has been no such submission or determination yet.
+On 8 October 2026 the player supplied the source stamp and original downloaded
+candidate ZIP. Direct read-only inspection of that uploaded ZIP confirmed:
+
+- Archive size: 166,172,979 bytes; SHA-256 exactly matches the candidate package above.
+- The launcher inside the ZIP exactly matches the candidate launcher hash above.
+- One `BUILD_SOURCE.txt`, containing `aa61edfe2562ca00b94c51c9b84adc9f5aaf5c97`.
+- 553 archive entries, with no duplicate names or unsafe extraction paths found.
+- No files from the archive were executed. The quarantined file on the PC was not restored.
+
+This resolves the uploaded download's identity and integrity. It does not hash
+the already extracted quarantined instance or explain the launch-time behavior.
+The behavior alert still needs local diagnostic evidence or a Microsoft analysis
+determination. A [submission draft](DEFENDER_REVIEW_DRAFT.md) and the verified
+launcher are prepared; nothing has been submitted and no determination exists.
 
 Microsoft documents the difference between
 [behavior monitoring](https://learn.microsoft.com/en-us/defender-endpoint/demonstration-behavior-monitoring)
