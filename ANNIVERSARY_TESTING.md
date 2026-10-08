@@ -1,8 +1,12 @@
 # Anniversary Edition: first NPC handoff comparison
 
-Status: both Windows builds succeeded on 7 October 2026. Native compilation,
-UI packaging, and artifact upload passed. Archive inspection and all in-game
-tests remain pending; successful CI does not establish gameplay compatibility.
+Status: both Windows builds succeeded on 7 October 2026. Original archive
+hashes, source stamps, core binaries, and symbol files were inspected on
+8 October; on-demand Defender scans reported no threats for both packages.
+Gameplay testing is blocked by a player-reported Defender behavior quarantine
+(`Behavior:Win32/DefenseEvasion.A!ml`). The runner did not reproduce game launch
+or behavior monitoring. See [inspection evidence](ANNIVERSARY_SECURITY_CHECK.md).
+All in-game tests remain pending.
 
 [Completed comparison run](https://github.com/Corberstein/skyrim-coop/actions/runs/37696430203)
 used baseline `115b5019609b96eb9d63bbd03962043c30437dc8` and candidate
@@ -14,11 +18,14 @@ unexpired, with expiry on 14 October 2026:
 | Baseline | [115b5019 ZIP](https://github.com/Corberstein/skyrim-coop/actions/runs/37696430203/artifacts/11517175649) | [Baseline symbols](https://github.com/Corberstein/skyrim-coop/actions/runs/37696430203/artifacts/11517110759) |
 | Candidate | [aa61edfe ZIP](https://github.com/Corberstein/skyrim-coop/actions/runs/37696430203/artifacts/11515724459) | [Candidate symbols](https://github.com/Corberstein/skyrim-coop/actions/runs/37696430203/artifacts/11516591381) |
 
-The workspace download attempt returned HTTP 403, so `BUILD_SOURCE.txt`,
-archive contents, and independently calculated file hashes have not yet been
-inspected. A separate runner-side archive check was proposed but has not run.
-Before gameplay testing, verify those files and both PCs' runtime, matching
-Address Library data, and effective content/load order as described below.
+The initial workspace download returned HTTP 403. A subsequent isolated
+[Windows inspection](https://github.com/Corberstein/skyrim-coop/actions/runs/37727506255)
+downloaded all four original archives, recalculated their SHA-256 hashes, and
+checked both `BUILD_SOURCE.txt` files. This establishes the inspected GitHub
+packages' provenance, not the identity or safety of a particular local copy.
+Keep the quarantined launcher blocked while its behavior alert is investigated.
+Before gameplay testing, also verify both PCs' runtime, matching Address Library
+data, and effective content/load order as described below.
 
 ## Target and patch
 
