@@ -1,7 +1,24 @@
 # Anniversary Edition: first NPC handoff comparison
 
-Status: build configuration prepared; neither Windows build nor in-game test
-has run here. Successful CI alone will not establish gameplay compatibility.
+Status: both Windows builds succeeded on 7 October 2026. Native compilation,
+UI packaging, and artifact upload passed. Archive inspection and all in-game
+tests remain pending; successful CI does not establish gameplay compatibility.
+
+[Completed comparison run](https://github.com/Corberstein/skyrim-coop/actions/runs/37696430203)
+used baseline `115b5019609b96eb9d63bbd03962043c30437dc8` and candidate
+`aa61edfe2562ca00b94c51c9b84adc9f5aaf5c97`. All four artifacts were confirmed
+unexpired, with expiry on 14 October 2026:
+
+| Build | Mod package | Debugging symbols |
+|---|---|---|
+| Baseline | [115b5019 ZIP](https://github.com/Corberstein/skyrim-coop/actions/runs/37696430203/artifacts/11517175649) | [Baseline symbols](https://github.com/Corberstein/skyrim-coop/actions/runs/37696430203/artifacts/11517110759) |
+| Candidate | [aa61edfe ZIP](https://github.com/Corberstein/skyrim-coop/actions/runs/37696430203/artifacts/11515724459) | [Candidate symbols](https://github.com/Corberstein/skyrim-coop/actions/runs/37696430203/artifacts/11516591381) |
+
+The workspace download attempt returned HTTP 403, so `BUILD_SOURCE.txt`,
+archive contents, and independently calculated file hashes have not yet been
+inspected. A separate runner-side archive check was proposed but has not run.
+Before gameplay testing, verify those files and both PCs' runtime, matching
+Address Library data, and effective content/load order as described below.
 
 ## Target and patch
 
